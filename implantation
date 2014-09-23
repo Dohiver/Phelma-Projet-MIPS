@@ -39,4 +39,5 @@ struct registres {
  unsigned int $sp;
  unsigned int $fp;
  unsigned int $ra;
-}proc
+ 
+}proc;
