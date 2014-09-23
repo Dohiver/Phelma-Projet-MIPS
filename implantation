@@ -1,10 +1,32 @@
 Phelma-Projet-MIPS
 ==================
+
 Projet MIPS phelma
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 
 
+
+main(){
+
+int tab[32];//={'zero','at','v0'}
+int i;
+for(i=0;i<32;i++)
+{
+	tab[i]=i;
+
+}
+
+printf("%d\n",tab[1]);
+
+return 0;
+}
+
+
+/*
 struct registres 
 {
    unsigned int $zero;
@@ -40,4 +62,7 @@ struct registres
    unsigned int $fp;
    unsigned int $ra;
  
-}proc;
+};
+
+*/
+
