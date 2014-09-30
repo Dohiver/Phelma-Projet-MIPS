@@ -1,25 +1,5 @@
 
 
-Dong Li (winterleedd@gmail.com)
-
-#ifndef IMPLENTATION_MEMOIRE_H
-#define IMPLENTATION_MEMOIRE_H
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-/* la librairie readline */
-#include <readline/readline.h>
-#include <readline/history.h>
-
-/* macros de DEBUG_MSG fournies , etc */
-#include "notify.h"
-
-
-#include "num_instr_et_codes_erreurs.h"
-
-
-
-/* cr?ation d'un type m?moire, afin de s?par? les blocs m?moires (texte, data ou bss) */
 struct MEMOIRE
 {
 	char * nom ;
@@ -31,47 +11,3 @@ struct MEMOIRE
 typedef struct MEMOIRE memoire;
 
 
-
-/* pour cr?er le bloc de m?moire data par exemple,
-il nous suffira de cr?er la variable data, de type m?moire,
-qui commencera l? ou on nous le demande et qui seras de la taille demand?e*/
-
-/* On d?finit un type de pointeur vers la m?moire : 
- * En effet pour certaine fonction, par exemple la fonction lm, il est difficile de charger
- * avec un seul pointeur de type char un int en m?moire,
- * en effet on aura alors un probl?me de d?passement du nombre de bits*/
-/* 
-union POINTEURMEM
-{
-		char *  oct ;
-		int * entier ;		
-} ;
-
-typedef union POINTEURMEM pointeurMem;
-*/
-
-// test si le pointeur (char *) de la memoire ordi est dans la memoire allou? dans le simulateur
-// retourne : MEMOIRE_DE_TEXT, MEMOIRE_DE_DATA, MEMOIRE_DE_BSS, OP_ECHOUE, 
-
-int testMemPOrdi (char * p, memoire memText, memoire memData, memoire memBss);
-
-int testMemValAdresseVirtuelle (unsigned int valAdresseVirt, memoire memText, memoire memData, memoire memBss);
-
-
-// fonction de conversion des m?moires de l'ordi ? celle du simulateur (dans l'ordi)
-
-char * conversionMem_VirtualMipstoPc (char * p, memoire memText, memoire memData, memoire memBss);
-
-unsigned int conversionMem_PctoVirtualMips (char * p, memoire memText, memoire memData, memoire memBss);
-
-
-/**************************************************************************************************************/
-
-
-char * allocationMemoire (int taille_mem);
-
-void libererMemoire (char * p) ;
-
-#endif
-
-Affichage de implentation_memoire.h
