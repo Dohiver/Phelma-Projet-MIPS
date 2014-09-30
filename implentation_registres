@@ -1,0 +1,26 @@
+#ifndef IMPLENTATION_REGISTRE_H
+#define IMPLENTATION_REGISTRE_H
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+/* la librairie readline */
+#include <readline/readline.h>
+#include <readline/history.h>
+
+/* macros de DEBUG_MSG fournies , etc */
+#include "notify.h"
+
+#include "num_instr_et_codes_erreurs.h"
+
+
+
+unsigned int lireRegistre (int nReg, unsigned int * p) ;
+
+void ecrireRegistre (int nReg, unsigned int val_to_write, unsigned int * p) ;
+
+unsigned int * allocationRegistres () ;
+
+void libererRegistre (unsigned int * p) ;
+
+
+#endif
